@@ -54,6 +54,9 @@ def main():
         # Export device list to excel sheet
         with pd.ExcelWriter('device_list.xlsx', engine='xlsxwriter') as writer:
             df_devices.to_excel(writer, sheet_name='Sheet1', index=False)
+            
+        # Alternatevly write to a csv
+        #df_devices.to_csv('devices.csv')
 
         # Print the DataFrame to the console
         print(df_devices.tail(6))
